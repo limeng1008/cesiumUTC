@@ -1,0 +1,88 @@
+{
+  "name": "vue-fastapi-admin-web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "ci": "pnpm type-check && pnpm test && pnpm build",
+    "type-check": "tsc -p tsconfig.ionosphere.json",
+    "test": "node --test tests/*.test.cjs",
+    "prepare:cesium": "node scripts/prepare-cesium.mjs",
+    "predev": "pnpm prepare:cesium",
+    "prebuild": "pnpm prepare:cesium",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint --ext .js,.vue,.ts .",
+    "lint:fix": "eslint --fix --ext .js,.vue .",
+    "lint:staged": "lint-staged",
+    "prettier": "npx prettier --write ."
+  },
+  "dependencies": {
+    "@iconify/json": "^2.2.228",
+    "@iconify/vue": "^4.1.1",
+    "@unocss/eslint-config": "^0.55.0",
+    "@vueuse/core": "^10.3.0",
+    "@zclzone/eslint-config": "^0.0.4",
+    "axios": "^1.4.0",
+    "cesium": "1.133.0",
+    "dayjs": "^1.11.9",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.46.0",
+    "lodash-es": "^4.17.21",
+    "naive-ui": "^2.34.4",
+    "pinia": "^2.1.6",
+    "rollup-plugin-visualizer": "^5.9.2",
+    "sass": "^1.65.1",
+    "typescript": "^5.1.6",
+    "unocss": "^0.55.0",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-icons": "^0.16.5",
+    "unplugin-vue-components": "^0.25.1",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.0",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue": "^3.5.22",
+    "vue-cesium": "3.2.12",
+    "vue-i18n": "9",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.6"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --ext .js,.vue ."
+    ]
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "*.ts"
+        ],
+        "parser": "@typescript-eslint/parser",
+        "plugins": [
+          "@typescript-eslint"
+        ],
+        "rules": {
+          "no-unused-vars": "off",
+          "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+              "argsIgnorePattern": "^_"
+            }
+          ],
+          "@typescript-eslint/no-explicit-any": "error"
+        }
+      }
+    ],
+    "extends": [
+      "@zclzone",
+      "@unocss",
+      ".eslint-global-variables.json"
+    ]
+  }
+}
