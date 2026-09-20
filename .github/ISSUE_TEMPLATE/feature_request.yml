@@ -1,0 +1,51 @@
+name: Feature request
+description: Propose a scientific or user workflow improvement
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Explain the problem before the implementation. Do not upload credentials, databases, personal information, or private scientific datasets.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Scientific or user problem
+      description: What cannot be understood or completed with the current workflow?
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Proposed workflow
+      description: Describe the desired interaction, calculation, or data flow.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What existing workflows or approaches did you evaluate?
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Data requirements
+      description: List dimensions, units, formats, size constraints, and redistribution limits using synthetic examples only.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Provide observable outcomes and scientific validation expectations.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Data-safety confirmation
+      options:
+        - label: This request contains no credentials, access tokens, databases, private datasets, or personal information.
+          required: true

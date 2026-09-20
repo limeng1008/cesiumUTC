@@ -1,0 +1,71 @@
+name: Bug report
+description: Report a reproducible CesiumUTC problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve CesiumUTC. Do not upload credentials, access tokens, databases, personal information, or private scientific datasets. Remove secrets and identifying paths from logs and screenshots.
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, CesiumUTC commit, Python, Node.js, and pnpm versions.
+      placeholder: macOS 15; commit abc1234; Python 3.11; Node 20; pnpm 10
+    validations:
+      required: true
+  - type: textarea
+    id: browser_gpu
+    attributes:
+      label: Browser and GPU
+      description: Browser/version, GPU, WebGL2 status, and whether hardware acceleration is enabled.
+    validations:
+      required: true
+  - type: dropdown
+    id: data_source
+    attributes:
+      label: Data source
+      options:
+        - Mock
+        - SAMI3
+        - Other local adapter
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest deterministic sequence that reproduces the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Paste relevant logs after removing secrets, tokens, private data, and personal paths.
+      render: shell
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or recordings
+      description: Attach sanitized visual evidence when useful. Do not expose private dataset identifiers.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Data-safety confirmation
+      options:
+        - label: I removed credentials, access tokens, private datasets, databases, and personal information.
+          required: true
