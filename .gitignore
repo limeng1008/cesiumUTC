@@ -1,0 +1,43 @@
+__pycache__/
+.idea/
+venv/
+.venv/
+app/logs/
+.env
+.env.local
+.mypy_cache/
+.vscode
+.ruff_cache/
+.pytest_cache/
+.playwright-cli/
+output/
+data/ionosphere/
+migrations/
+
+# Local agent planning artifacts
+.superpowers/
+findings.md
+progress.md
+task_plan.md
+.gitignore 2
+
+# Runtime databases and research data
+*.sqlite3
+*.sqlite3-*
+*.sqlite3.backup-*
+*.nc
+*.nc4
+
+# Frontend dependencies and generated assets
+web/node_modules/
+web/dist/
+web/public/cesium/
+web/stats.html
+
+db.sqlite3
+db.sqlite3-journal
+db.sqlite3-shm
+db.sqlite3-wal
+
+.DS_Store
+._.DS_Store

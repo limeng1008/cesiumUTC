@@ -1,0 +1,13 @@
+.git
+.github
+.superpowers
+.playwright-cli
+.venv
+node_modules
+web/node_modules
+web/dist
+output
+data/ionosphere
+*.sqlite3*
+*.nc
+*.nc4

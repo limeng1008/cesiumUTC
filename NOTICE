@@ -1,0 +1,8 @@
+CesiumUTC
+Copyright (c) 2026 limeng1008
+
+This project is based on vue-fastapi-admin by mizhexiaoxiao and preserves its
+MIT License and copyright notice.
+
+CesiumJS is licensed separately by Cesium GS, Inc. This repository does not
+remove or obscure CesiumJS or Cesium ion attribution displayed by the runtime.

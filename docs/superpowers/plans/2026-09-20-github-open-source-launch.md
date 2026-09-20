@@ -17,7 +17,7 @@
 - `web/src/views/ionosphere/volume/index.vue` — remove the lower-left scene caption and its unused computed state.
 - `web/src/views/ionosphere/volume/volume.scss` — let the desktop scene shrink to available height while retaining a usable mobile height.
 - `.gitignore` and `.dockerignore` — exclude databases, datasets, caches, generated media, local plans, and build output.
-- `pyproject.toml` — publish CesiumUTC metadata instead of the upstream scaffold identity.
+- `pyproject.toml` — publish CesiumUTC metadata and declare the pytest development dependency.
 - `README.md` — English default GitHub landing page.
 - `SETUP.md` — English reproducible setup and troubleshooting guide.
 - `LICENSE` — retain the upstream MIT notice and add the CesiumUTC modification copyright line without deleting upstream rights.
@@ -209,7 +209,7 @@ def test_allows_source_and_small_curated_media():
 Run:
 
 ```bash
-uv run pytest tests/test_public_repo.py -q
+uv run python -m pytest tests/test_public_repo.py -q
 ```
 
 Expected: collection error for `scripts.check_public_repo`.
@@ -344,6 +344,9 @@ requires-python = ">=3.11"
 Homepage = "https://github.com/limeng1008/cesiumUTC"
 Repository = "https://github.com/limeng1008/cesiumUTC"
 Issues = "https://github.com/limeng1008/cesiumUTC/issues"
+
+[dependency-groups]
+dev = ["pytest>=8.4,<9"]
 ```
 
 Keep every existing dependency and tool section unchanged. In `LICENSE`, retain the upstream copyright line and add:
@@ -368,7 +371,7 @@ remove or obscure CesiumJS or Cesium ion attribution displayed by the runtime.
 - [ ] **Step 6: Run the hygiene tests**
 
 ```bash
-uv run pytest tests/test_public_repo.py -q
+uv run python -m pytest tests/test_public_repo.py -q
 uv run python scripts/check_public_repo.py
 ```
 
@@ -575,7 +578,7 @@ Create `.github/pull_request_template.md`:
 
 ## Validation
 
-- [ ] `uv run pytest -q`
+- [ ] `uv run python -m pytest -q`
 - [ ] `cd web && pnpm type-check`
 - [ ] `cd web && pnpm test`
 - [ ] `cd web && pnpm build`
@@ -639,7 +642,7 @@ jobs:
         with:
           python-version: "3.11"
       - run: uv sync --frozen
-      - run: uv run pytest -q
+      - run: uv run python -m pytest -q
       - run: uv run python scripts/check_public_repo.py
 
   frontend:
@@ -664,7 +667,7 @@ jobs:
 
 ```bash
 uv sync --frozen
-uv run pytest -q
+uv run python -m pytest -q
 uv run python scripts/check_public_repo.py
 cd web
 pnpm install --frozen-lockfile
@@ -784,7 +787,7 @@ git commit -m "docs: add CesiumUTC visual showcase"
 - [ ] **Step 1: Run backend verification**
 
 ```bash
-uv run pytest -q
+uv run python -m pytest -q
 uv run ruff check app scripts tests
 ```
 
