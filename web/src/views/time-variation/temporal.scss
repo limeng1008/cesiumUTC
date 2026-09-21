@@ -1,0 +1,80 @@
+.temporal-page {
+  .analysis-controls form {
+    display: block;
+  }
+  .analysis-controls legend:not(:first-child) {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+  .analysis-metrics strong {
+    font-size: 24px;
+  }
+  .analysis-map {
+    height: 260px;
+  }
+}
+.temporal-charts {
+  display: grid;
+  gap: 16px;
+}
+.temporal-profile-details { padding: 0 16px 16px; display: grid; gap: 12px; }
+.temporal-scale {
+  justify-content: space-between;
+}
+.temporal-scale label {
+  min-width: 160px;
+}
+.temporal-chart svg {
+  width: 100%;
+  display: block;
+}
+.temporal-chart svg text {
+  fill: var(--an-muted);
+  font: 12px sans-serif;
+}
+.temporal-heat > p {
+  padding: 12px 18px;
+}
+.temporal-colorbar {
+  margin: 0 8% 0 10%;
+}
+.temporal-colorbar > div {
+  height: 12px;
+  border-radius: 2px;
+}
+.temporal-colorbar p {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font: 12px/2 ui-monospace, monospace;
+}
+.temporal-row-error {
+  display: block;
+  color: #ffc2b4;
+  max-width: 240px;
+  white-space: normal;
+}
+@media (max-width: 900px) {
+  .temporal-page .analysis-controls form {
+    grid-column: 1/-1;
+  }
+  .temporal-page fieldset {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .temporal-page fieldset > legend,
+  .temporal-page fieldset > p {
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 540px) {
+  .temporal-page fieldset {
+    grid-template-columns: 1fr;
+  }
+  .temporal-chart svg {
+    min-width: 520px;
+  }
+  .temporal-chart {
+    overflow-x: auto;
+  }
+}

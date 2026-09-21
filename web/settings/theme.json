@@ -1,0 +1,46 @@
+{
+  "header": { "height": 72 },
+  "tags": { "visible": false, "height": 0 },
+  "naiveThemeOverrides": {
+    "common": {
+      "primaryColor": "#68b5ff",
+      "primaryColorHover": "#94ccff",
+      "primaryColorPressed": "#398ee6",
+      "primaryColorSuppl": "#68b5ff",
+      "infoColor": "#69afff",
+      "successColor": "#78cda7",
+      "warningColor": "#e9b758",
+      "errorColor": "#ed7777",
+      "bodyColor": "#020c14",
+      "cardColor": "#061522",
+      "modalColor": "#071927",
+      "popoverColor": "#092032",
+      "inputColor": "#051320",
+      "borderColor": "#1b3b54",
+      "dividerColor": "#173044",
+      "textColorBase": "#d5e7f5",
+      "textColor1": "#d5e7f5",
+      "textColor2": "#adc6df",
+      "textColor3": "#7695b1",
+      "placeholderColor": "#66819c",
+      "borderRadius": "6px",
+      "fontFamily": "'PingFang SC', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif"
+    },
+    "Button": {
+      "textColor": "#b4d2ee",
+      "textColorPrimary": "#edf7ff",
+      "colorPrimary": "#175aa6",
+      "colorHoverPrimary": "#246ebc",
+      "colorPressedPrimary": "#124c90",
+      "borderPrimary": "1px solid #397dcb",
+      "border": "1px solid #25445e"
+    },
+    "Input": {
+      "color": "#04121e",
+      "colorFocus": "#061a2a",
+      "border": "1px solid #22445f",
+      "borderHover": "1px solid #478bc0",
+      "borderFocus": "1px solid #64b2f4"
+    }
+  }
+}

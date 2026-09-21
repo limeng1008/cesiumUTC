@@ -59,6 +59,8 @@ password: 123456
 
 These values are not production credentials. Replace the account, secret keys, origin policy, database, proxy, and transport configuration before making the service accessible from another machine or network.
 
+When `SECRET_KEY` is unset, CesiumUTC generates an ephemeral signing key at process start so the localhost quick start does not publish a shared key. Set a persistent, randomly generated `SECRET_KEY` through the environment for any non-local deployment; never commit that value.
+
 ## Optional SAMI3 import
 
 The deterministic mock field works without an external file. To inspect and import SAMI3 NetCDF data through the command line:

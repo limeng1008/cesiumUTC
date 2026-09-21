@@ -1,0 +1,101 @@
+.section-plot {
+  flex: 0 0 auto;
+  border-top: 1px solid #23445b;
+  padding: 10px 14px;
+  background: #061521;
+  color: #b8d8ee;
+}
+.section-plot summary {
+  cursor: pointer;
+  font-size: 12px;
+}
+.section-plot summary span {
+  float: right;
+  font-size: 11px;
+  color: #83aac7;
+}
+.section-plot-meta {
+  font-size: 10px;
+  color: #87abc4;
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+}
+.section-plot-body {
+  display: flex;
+  gap: 8px;
+}
+.section-y-labels {
+  width: 48px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 180px;
+  font-size: 10px;
+}
+.section-plot-field {
+  flex: 1;
+  min-width: 0;
+}
+.section-canvas-wrap {
+  position: relative;
+  height: 180px;
+  background: repeating-conic-gradient(#092131 0% 25%, #0c2839 0% 50%) 0 / 12px 12px;
+}
+.section-canvas-wrap canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+.section-crosshair {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.section-x-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 10px;
+}
+.section-axis-title {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 5px;
+}
+.volume-center:has(.section-plot) {
+  overflow: auto;
+}
+@media (max-width: 900px) {
+  .volume-workspace:has(.section-plot) {
+    display: flex;
+    flex-direction: column;
+  }
+  .volume-workspace:has(.section-plot) .volume-center {
+    order: -1;
+    flex: 0 0 auto;
+    overflow: visible;
+  }
+  .volume-workspace:has(.section-plot) .volume-viewport {
+    flex: 0 0 360px;
+  }
+  .volume-workspace:has(.section-plot) .volume-controls,
+  .volume-workspace:has(.section-plot) .volume-probe {
+    flex: 0 0 auto;
+    overflow: visible;
+    border-right: 0;
+  }
+}
+@media (max-width: 680px) {
+  .section-plot {
+    padding: 8px;
+  }
+  .section-plot summary span {
+    float: none;
+    display: block;
+    margin-top: 4px;
+  }
+}

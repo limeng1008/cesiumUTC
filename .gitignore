@@ -16,6 +16,7 @@ migrations/
 
 # Local agent planning artifacts
 .superpowers/
+docs/superpowers/
 findings.md
 progress.md
 task_plan.md
@@ -33,6 +34,9 @@ web/node_modules/
 web/dist/
 web/public/cesium/
 web/stats.html
+
+# Upstream documentation-only demo assets
+deploy/sample-picture/
 
 db.sqlite3
 db.sqlite3-journal

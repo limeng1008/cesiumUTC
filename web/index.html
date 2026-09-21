@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020b13" />
+    <meta name="description" content="全球电离层分析系统：三维地球与电离层分析工作空间。" />
+    <link rel="icon" href="/favicon.svg" />
+    <title><%= title %></title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #020b13;
+        color: #86bceb;
+      }
+      .boot-screen {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        font: 14px 'PingFang SC', sans-serif;
+        letter-spacing: 2px;
+      }
+      .boot-screen img {
+        width: 48px;
+        height: 48px;
+      }
+      .boot-screen small {
+        font-size: 11px;
+        color: #507b9b;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="boot-screen" role="status">
+        <img src="/favicon.svg" alt="" /><span>全球电离层分析系统</span
+        ><small>正在加载工作空间…</small>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
