@@ -12,7 +12,7 @@
 
 [快速开始](#快速开始) · [功能](#功能) · [架构](#架构) · [数据格式](#数据格式) · [English](README.md)
 
-![CesiumUTC 区域多高度电离层切片](docs/assets/hero-ionosphere.png)
+![CesiumUTC 交互式三维电离层体数据](docs/assets/hero-ionosphere.png)
 
 CesiumUTC 将多维电离层数据放到可交互的三维地球中，在一个可复现的 FastAPI + Vue 应用中连接 Cesium GPU Voxel、真实大地高切片、空间探针、垂直剖面、时序分析和 SAMI3 NetCDF 数据导入。
 

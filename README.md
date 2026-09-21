@@ -12,7 +12,7 @@
 
 [Quick start](#quick-start) · [Features](#features) · [Architecture](#architecture) · [Data formats](#data-formats) · [中文](README.zh-CN.md)
 
-![CesiumUTC regional multi-altitude ionosphere slices](docs/assets/hero-ionosphere.png)
+![CesiumUTC interactive 3D ionosphere volume](docs/assets/hero-ionosphere.png)
 
 CesiumUTC turns multidimensional ionosphere data into an explorable 3D globe.
 It combines native Cesium GPU voxels, geodetic altitude slices, spatial probes,
