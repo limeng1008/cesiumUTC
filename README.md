@@ -23,6 +23,8 @@ reproducible FastAPI + Vue application.
 
 [Watch the higher-quality MP4 walkthrough](docs/assets/cesiumutc-demo.mp4)
 
+If CesiumUTC is useful to your research or visualization work, **star this repository** to help others discover it.
+
 </div>
 
 ## Why CesiumUTC
@@ -33,7 +35,9 @@ Ionosphere datasets are four-dimensional, sparse, and difficult to inspect with 
 - inspect exact values, regional statistics, profiles, and vertical sections;
 - import and manage SAMI3 NetCDF datasets without baking private data into the repository.
 
-The bundled deterministic mock source makes the interface reproducible without a Cesium ion token or a research dataset. Imported SAMI3 data remains local and is intentionally excluded from Git.
+Built for ionosphere researchers inspecting SAMI3 output and developers building scientific visualization tools with CesiumJS. The current application interface is primarily Chinese; this README and the setup guide are in English.
+
+The renderer uses local imagery and does not require a Cesium ion token. Deterministic synthetic fields are included for development and algorithm tests. The normal application workflow uses imported datasets: a fresh installation has an empty data catalogue. Imported SAMI3 data remains local and is intentionally excluded from Git.
 
 ## Features
 
@@ -103,6 +107,7 @@ The API and OpenAPI UI are available at <http://127.0.0.1:9999/docs>.
 In a second terminal:
 
 ```bash
+# From the cloned cesiumUTC directory
 cd web
 corepack enable
 pnpm install --frozen-lockfile
@@ -114,6 +119,15 @@ Open <http://127.0.0.1:3100/ionosphere>.
 The upstream scaffold's local development account is `admin` / `123456`. It is provided only for a localhost development database. Change all credentials and security settings before any network-accessible deployment.
 
 See [SETUP.md](SETUP.md) for builds, validation, SAMI3 import, and troubleshooting.
+
+### Your first dataset
+
+1. Sign in and open **Data Management** (数据管理).
+2. Upload a compatible SAMI3 NetCDF file, then inspect its parameters and UTC timestamps.
+3. Select a parameter and timestamp, start an import, and wait until it is ready.
+4. Open that import in the 3D workspace to explore altitude slices and probes; use the analysis and time-variation pages for numerical inspection.
+
+**No dataset yet?** Start with the [recorded walkthrough](docs/assets/cesiumutc-demo.mp4) and [screenshots](#screenshots). A redistributable sample dataset is on the roadmap; research data and runtime databases are not bundled with the repository. See the [SAMI3 format guide](docs/SAMI3_IMPORT.md) before preparing an input file.
 
 ## Data formats
 
@@ -172,6 +186,8 @@ Roadmap items describe direction, not delivery commitments. Please open a featur
 ## Contributing
 
 Issues, documentation fixes, tests, data adapters, and visualization improvements are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request. Never attach private datasets, credentials, database snapshots, or access tokens to an issue.
+
+Good starting points include English interface translations, clearer setup instructions, and reproducible browser/GPU compatibility reports. [Report a bug](https://github.com/limeng1008/cesiumUTC/issues/new?template=bug_report.yml) or [suggest a feature](https://github.com/limeng1008/cesiumUTC/issues/new?template=feature_request.yml). If the project helps you, a Star or a link shared with a relevant research group helps it reach more users.
 
 ## Security
 

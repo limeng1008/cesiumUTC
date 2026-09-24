@@ -63,7 +63,9 @@ When `SECRET_KEY` is unset, CesiumUTC generates an ephemeral signing key at proc
 
 ## Optional SAMI3 import
 
-The deterministic mock field works without an external file. To inspect and import SAMI3 NetCDF data through the command line:
+The normal application workflow requires an imported dataset. A fresh installation has an empty catalogue; it does not automatically load the synthetic fields used by development and algorithm tests. No redistributable sample dataset is bundled yet.
+
+To inspect and import SAMI3 NetCDF data through the command line:
 
 ```bash
 uv run python scripts/import_sami3.py --help
@@ -123,7 +125,7 @@ Start the backend before the frontend, then sign in with the local development a
 
 ### No managed dataset appears
 
-The production data workflow does not silently select an unrelated dataset. Upload and import a compatible file in **Data Management**, or use the deterministic mock paths documented in the project-specific development pages.
+An empty catalogue is expected on a fresh installation. Upload a compatible file in **Data Management** (数据管理), inspect its parameters and timestamps, and import the desired frame. Open the 3D workspace after the task is ready. The synthetic sources used by development tests are not an automatic fallback for this workflow.
 
 ### A SAMI3 file is rejected
 
