@@ -10,15 +10,13 @@
 [![Vue 3](https://img.shields.io/badge/Vue-3-42b883.svg)](https://vuejs.org/)
 [![CesiumJS](https://img.shields.io/badge/CesiumJS-1.133-6CADDF.svg)](https://cesium.com/platform/cesiumjs/)
 
-[快速开始](#快速开始) · [功能](#功能) · [架构](#架构) · [数据格式](#数据格式) · [English](README.md)
+[快速开始](#快速开始) · [特色截图](#截图) · [功能](#功能) · [架构](#架构) · [English](README.md)
 
-![CesiumUTC 交互式三维电离层体数据](docs/assets/hero-ionosphere.png)
+![CesiumUTC 全球概览、TEC、F2 参数和高度廓线](docs/assets/global-overview.png)
 
 CesiumUTC 将多维电离层数据放到可交互的三维地球中，在一个可复现的 FastAPI + Vue 应用中连接 Cesium GPU Voxel、真实大地高切片、空间探针、垂直剖面、时序分析和 SAMI3 NetCDF 数据导入。
 
-![CesiumUTC 交互演示](docs/assets/cesiumutc-demo.gif)
-
-[观看高清 MP4 演示](docs/assets/cesiumutc-demo.mp4)
+[查看新截取的对比与剖面分析](#截图) · [观看原版三维交互演示](docs/assets/cesiumutc-demo.mp4)
 
 如果 CesiumUTC 对你的科研或可视化工作有帮助，欢迎 **Star 本仓库**，让更多人发现它。
 
@@ -50,13 +48,48 @@ CesiumUTC 将多维电离层数据放到可交互的三维地球中，在一个�
 
 ## 截图
 
-### 全球概览
+以下为重新截取的实际运行界面，使用 **2019 年 4 月 25 日**导入的 SAMI3 模型输出，不是设计稿或实测数据。其中两组时序图片为**开发预览**：对应实现目前保留在本地，尚未包含在已发布源码中。[截图条件与功能状态](docs/SHOWCASE.md)。
 
-![全球电离层概览](docs/assets/global-overview.png)
+### 1. 双时刻对比分析 · 开发预览
 
-### 科学分析
+同时查看基准 A、对比 B、**B − A 差值**和相对变化。A/B 共用绝对色标，差值色标以零为中心。图示为 **06:00 → 12:00 UTC**、**90–1000 km** 高度区间的电子含量。
 
-![电离层分析工作台](docs/assets/analysis-view.png)
+![双时刻区间电子含量、绝对差值和相对变化四图对比](docs/assets/temporal-comparison.png)
+
+### 2. 二维／三维剖面联动
+
+支持经向、纬向和地图画线剖面。三维幕墙与二维图共用采样网格和色标，点击二维图可定位三维探针。图示为 **37.5°N**、**200–500 km**、**12:00 UTC**。
+
+![三维电离层幕墙与二维纬向剖面共享取样标记](docs/assets/vertical-section.png)
+
+### 3. 指定位置高度廓线
+
+点击地球或输入坐标，对比指定位置与区域平均电子密度廓线。图示位置为 **117.5°E、37.5°N**，时刻 **12:00 UTC**；纵轴为高度，横轴为电子密度对数值。
+
+![指定位置电子密度廓线与区域平均值对照](docs/assets/altitude-profile.png)
+
+### 4. 全天变化与变化速率 · 开发预览
+
+固定点 **144 个十分钟时刻**的全天曲线，并单独展示每分钟变化速率。本地新版还支持共同覆盖区域平均，以及区间电子含量、NmF2、hmF2、foF2 四类指标。缺测不补零，变化速率**不是 GNSS ROT/ROTI**。
+
+![全天区间电子含量曲线与相邻时刻每分钟变化速率](docs/assets/derived-time-series.png)
+
+### 5. 多高度科学切片
+
+在选定区域同时观察 **100、200、300、400 km** 四层曲面，共用科学色标，可调透明度。高度采用真实大地高，不做视觉夸张。
+
+![东亚上空四层真实大地高切片及统一电子密度色标](docs/assets/altitude-slices.png)
+
+<details>
+<summary>原版三维交互演示 · GIF / MP4</summary>
+
+以下为此前录制的三维交互流程，新版特色以本页最新截图为准。
+
+![CesiumUTC 原版三维交互演示](docs/assets/cesiumutc-demo.gif)
+
+[观看高清 MP4](docs/assets/cesiumutc-demo.mp4)
+
+</details>
 
 ## 架构
 

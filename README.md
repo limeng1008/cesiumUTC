@@ -10,18 +10,16 @@
 [![Vue 3](https://img.shields.io/badge/Vue-3-42b883.svg)](https://vuejs.org/)
 [![CesiumJS](https://img.shields.io/badge/CesiumJS-1.133-6CADDF.svg)](https://cesium.com/platform/cesiumjs/)
 
-[Quick start](#quick-start) · [Features](#features) · [Architecture](#architecture) · [Data formats](#data-formats) · [中文](README.zh-CN.md)
+[Quick start](#quick-start) · [Feature gallery](#screenshots) · [Features](#features) · [Architecture](#architecture) · [中文](README.zh-CN.md)
 
-![CesiumUTC interactive 3D ionosphere volume](docs/assets/hero-ionosphere.png)
+![CesiumUTC global ionosphere overview with TEC, F2 metrics and altitude profile](docs/assets/global-overview.png)
 
 CesiumUTC turns multidimensional ionosphere data into an explorable 3D globe.
 It combines native Cesium GPU voxels, geodetic altitude slices, spatial probes,
 vertical sections, temporal analysis, and SAMI3 NetCDF ingestion in one
 reproducible FastAPI + Vue application.
 
-![CesiumUTC interactive walkthrough](docs/assets/cesiumutc-demo.gif)
-
-[Watch the higher-quality MP4 walkthrough](docs/assets/cesiumutc-demo.mp4)
+[Explore the fresh comparison and profile screenshots](#screenshots) · [Watch the original 3D walkthrough](docs/assets/cesiumutc-demo.mp4)
 
 If CesiumUTC is useful to your research or visualization work, **star this repository** to help others discover it.
 
@@ -53,13 +51,48 @@ The renderer uses local imagery and does not require a Cesium ion token. Determi
 
 ## Screenshots
 
-### Global overview
+Fresh captures from the running application, using imported SAMI3 model output for **25 April 2019**. These are real application views, not mockups or observations. The two temporal views below are **development previews**: their implementation is currently local and is not included in the published source. [Capture settings and availability](docs/SHOWCASE.md).
 
-![Global ionosphere overview](docs/assets/global-overview.png)
+### 1. Compare two UTC timestamps — development preview
 
-### Scientific analysis
+See the reference field, comparison field, **B − A**, and relative change together. A and B share one absolute scale; difference maps use zero-centred scales. Shown: interval electron content, **06:00 → 12:00 UTC**, integrated over **90–1000 km**.
 
-![Ionosphere analysis workspace](docs/assets/analysis-view.png)
+![Two-time comparison of interval electron content: A, B, absolute difference and relative change](docs/assets/temporal-comparison.png)
+
+### 2. Linked 3D curtains and 2D vertical sections
+
+Inspect a latitude, longitude, or drawn-path section. The 3D curtain and 2D plot share the same sampled grid and colour scale; clicking the plot places the corresponding probe in 3D. Shown: **37.5°N**, **200–500 km**, **12:00 UTC**.
+
+![Linked 3D ionosphere curtain and 2D latitude section with a shared sampling marker](docs/assets/vertical-section.png)
+
+### 3. Point profiles against regional statistics
+
+Select a location on the globe or enter coordinates, then compare its electron-density profile with the regional mean. Shown: **117.5°E, 37.5°N**, **12:00 UTC**; altitude is vertical and electron density uses a logarithmic horizontal axis.
+
+![Selected-location electron density profile compared with the regional mean beside the 3D globe](docs/assets/altitude-profile.png)
+
+### 4. Full-day evolution and change rates — development preview
+
+Follow **144 ten-minute frames** at a fixed point, with a separate curve for change per minute. The local workspace also supports common-coverage area averages and interval electron content, NmF2, hmF2, and foF2. Missing values stay missing; these rates are **not GNSS ROT/ROTI**.
+
+![Full-day interval electron content and adjacent per-minute change at a fixed point](docs/assets/derived-time-series.png)
+
+### 5. Multiple geodetic altitude slices
+
+Explore **100, 200, 300, and 400 km** surfaces together over a selected region, with shared scientific colours and configurable transparency. Heights are geodetic, not visually exaggerated.
+
+![Four geodetic altitude slices above East Asia with a shared electron density colour scale](docs/assets/altitude-slices.png)
+
+<details>
+<summary>Original 3D walkthrough · GIF / MP4</summary>
+
+This earlier recording demonstrates the 3D workflow; the screenshots above show the refreshed feature gallery.
+
+![CesiumUTC original interactive 3D walkthrough](docs/assets/cesiumutc-demo.gif)
+
+[Watch the higher-quality MP4](docs/assets/cesiumutc-demo.mp4)
+
+</details>
 
 ## Architecture
 
